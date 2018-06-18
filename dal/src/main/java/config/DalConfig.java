@@ -45,7 +45,7 @@ public class DalConfig {
      * @return
      */
 
-    @Bean(name = "defaultDataSource")
+    @Bean(name = "dataSource")
     //@Profile("defaultDataSource")
     public DataSource dataSource() {
         BasicDataSource ds = new BasicDataSource();
@@ -58,7 +58,7 @@ public class DalConfig {
         return ds;
     }
 
-    @Bean(name = "springMVC")
+    @Bean(name = "springMVCdataSource")
     //@Profile("springMVC")
     public DataSource springMVCdataSource() {
         BasicDataSource ds = new BasicDataSource();
@@ -72,7 +72,7 @@ public class DalConfig {
     }
 
     @Bean
-    public JdbcOperations jdbcTemplate(DataSource dataSource)
+    public JdbcOperations jdbcTemplate(@Qualifier("springMVCdataSource") DataSource dataSource)
     {
         return new JdbcTemplate(dataSource);
     }
