@@ -26,10 +26,12 @@ import javax.sql.DataSource;
 //@ComponentScan(basePackages = {"data"})
 public class JpaConfig {
 
+/*
+    以下配置，异常后没有回滚
     @Bean
     public JpaTransactionManager transactionManager() {
         return new JpaTransactionManager(); // does this need an emf???
-    }
+    }*/
 
     @Bean
     public JpaVendorAdapter jpaVendorAdapter() {
@@ -54,8 +56,9 @@ public class JpaConfig {
     @Bean
     public TransactionBiz transactionBiz(){return new TransactionBiz();}
 
+    /*以下是事务起作用的核心配置*/
     @Configuration
-    @EnableTransactionManagement
+    @EnableTransactionManagement //启动事务，必须要添加。
     public static class TransactionConfig {
 
         @Autowired
@@ -68,6 +71,7 @@ public class JpaConfig {
             return transactionManager;
         }
     }
+
 
 
 }
