@@ -1,4 +1,4 @@
-package entity;
+package com.jeffrey.templateproject.dal.entity;
 
 import lombok.Getter;
 import lombok.Setter;

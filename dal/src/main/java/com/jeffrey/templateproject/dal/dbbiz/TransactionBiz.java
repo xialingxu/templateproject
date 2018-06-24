@@ -1,9 +1,8 @@
-package dbbiz;
+package com.jeffrey.templateproject.dal.dbbiz;
 
-import data.JpaSpitterRepository;
-import entity.Spitter;
+import com.jeffrey.templateproject.dal.data.JpaSpitterRepository;
+import com.jeffrey.templateproject.dal.entity.Spitter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -21,6 +20,6 @@ public class TransactionBiz {
         spitter.setPassword("zuoll1983");
         spitter.setUpdateByEmail(true);
         Spitter return_spitter1 = jpaSpitterRepository.saveAndFlush(spitter);
-        throw new Exception();
+        //throw new Exception();
     }
 }

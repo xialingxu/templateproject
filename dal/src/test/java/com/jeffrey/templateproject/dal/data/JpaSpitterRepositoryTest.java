@@ -1,9 +1,10 @@
-package data;
+package com.jeffrey.templateproject.dal.data;
 
 
-import config.JpaConfig;
-import entity.CustomSpitter;
-import entity.Spitter;
+import com.jeffrey.templateproject.dal.config.JpaConfig;
+import com.jeffrey.templateproject.dal.data.JpaSpitterRepository;
+import com.jeffrey.templateproject.dal.entity.CustomSpitter;
+import com.jeffrey.templateproject.dal.entity.Spitter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 import static org.junit.Assert.*;
 

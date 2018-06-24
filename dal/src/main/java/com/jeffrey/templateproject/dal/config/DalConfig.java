@@ -1,6 +1,6 @@
-package config;
+package com.jeffrey.templateproject.dal.config;
 
-import data.JdbcSpitterRepository;
+import com.jeffrey.templateproject.dal.data.JdbcSpitterRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcOperations;

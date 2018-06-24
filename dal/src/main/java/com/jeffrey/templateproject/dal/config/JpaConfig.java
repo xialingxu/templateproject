@@ -1,6 +1,6 @@
-package config;
+package com.jeffrey.templateproject.dal.config;
 
-import dbbiz.TransactionBiz;
+import com.jeffrey.templateproject.dal.dbbiz.TransactionBiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -15,12 +15,11 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages={"data"})
+@EnableJpaRepositories(basePackages={"com.jeffrey.templateproject.dal.data"})
 //@Import({ CustomerConfig.class, SchedulerConfig.class })
 @Import({ dataSourceConfig.class})
 //@ComponentScan(basePackages = {"data"})
@@ -47,9 +46,9 @@ public class JpaConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier("dataSource") DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource);
-        emf.setPersistenceUnitName("data");
+        //emf.setPersistenceUnitName("data");
         emf.setJpaVendorAdapter(jpaVendorAdapter);
-        emf.setPackagesToScan("entity");
+        emf.setPackagesToScan("com.jeffrey.templateproject.dal.entity");
         return emf;
     }
 

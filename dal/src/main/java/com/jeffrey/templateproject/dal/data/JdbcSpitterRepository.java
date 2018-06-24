@@ -1,8 +1,7 @@
-package data;
+package com.jeffrey.templateproject.dal.data;
 
-import entity.Spitter;
+import com.jeffrey.templateproject.dal.entity.Spitter;
 import org.springframework.jdbc.core.JdbcOperations;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 

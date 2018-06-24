@@ -1,4 +1,4 @@
-package config;
+package com.jeffrey.templateproject.dal.config;
 
 
 import org.apache.commons.dbcp2.BasicDataSource;
